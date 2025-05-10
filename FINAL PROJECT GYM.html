@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSPB GYM - Join Now</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      background-color: #222;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: gold;
+      margin: 0;
+      font-size: 48px;
+    }
+    header p {
+      color: #ccc;
+      font-size: 22px;
+      margin-top: 10px;
+      font-style: italic;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, gold, #fff, gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      gap: 20px;
+    }
+    nav button {
+      background-color: gold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px gold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1571019613914-85f342c41e4b') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+      flex-direction: column;
+    }
+    .hero h2 {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 28px;
+      font-weight: bold;
+      color: gold;
+      background: linear-gradient(to right, gold, white, gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.6);
+      letter-spacing: 1.5px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section {
+      padding: 30px;
+    }
+    .section h3 {
+      color: gold;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .buttons button {
+      background-color: #444;
+      color: white;
+      border: 2px solid gold;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .buttons button:hover {
+      transform: scale(1.05);
+      background-color: gold;
+      color: black;
+    }
+    .subscription-form {
+      display: none;
+      padding: 30px;
+      background-color: #1a1a1a;
+      max-width: 600px;
+      margin: 30px auto;
+      border: 1px solid gold;
+      border-radius: 10px;
+    }
+    .subscription-form h2 {
+      text-align: center;
+      color: gold;
+    }
+    .subscription-form input,
+    .subscription-form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    .subscription-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FSBD GYM</h1>
+    <p>ENJOY FITNESS CLUB. SIRMIONE, PROVINCE DI BRESCIA</p>
+  </header>
+  <nav>
+    <button onclick="scrollToSection('home')">Home</button>
+    <button onclick="showSubscriptionForm()">Join Now</button>
+    <button onclick="alert('Elite trainer profiles coming soon')">Trainers</button>
+    <button onclick="alert('Workout schedule is being updated')">Schedule</button>
+    <button onclick="alert('Track your progress in the upcoming app')">Track Progress</button>
+    <button onclick="window.location.href='tel:01281520934'">Contact Us</button>
+  </nav>
+  <div class="hero" id="home">
+    <h2>Join the most luxurious gym experience in town</h2>
+    <p>ENJOY FITNESS CLUB – SIRMIONE, PROVINCIA DI BRESCIA</p>
+  </div>
+  <div class="section">
+    <h3>Membership Benefits:</h3>
+    <ul>
+      <li>Personal training sessions</li>
+      <li>State-of-the-art equipment</li>
+      <li>Sauna & Jacuzzi</li>
+      <li>Nutrition tracking</li>
+      <li>Smart progress tracking app</li>
+    </ul>
+    <div class="buttons">
+      <button onclick="showSubscriptionForm()">Monthly Membership</button>
+      <button onclick="showSubscriptionForm()">Annual Membership</button>
+      <button onclick="showSubscriptionForm()">Meet Trainers</button>
+      <button onclick="alert('Trial session booked!')">Book a Trial</button>
+      <button onclick="alert('Showing workout schedule')">View Schedule</button>
+      <button onclick="alert('Progress logged!')">Log Progress</button>
+      <button onclick="alert('Thanks for your feedback!')">Rate Our Service</button>
+      <button onclick="alert('Trainer will contact you shortly')">Message Trainer</button>
+    </div>
+  </div>
+  <div class="subscription-form" id="subscriptionForm">
+    <h2>Membership Form</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="password" placeholder="Password" required />
+      <select required>
+        <option value="">Select Membership Duration</option>
+        <option value="1">1 Month - EGP 500</option>
+        <option value="3">3 Months - EGP 1300</option>
+        <option value="6">6 Months - EGP 2400</option>
+        <option value="12">1 Year - EGP 4500</option>
+      </select>
+      <select required>
+        <option value="">Select Trainer</option>
+        <option value="ahmed">Captain Ahmed - Cardio Expert</option>
+        <option value="sara">Captain Sara - Personal Training & Nutrition</option>
+        <option value="mohamed">Captain Mohamed - Bodybuilding</option>
+        <option value="lina">Captain Lina - High Intensity Fitness</option>
+      </select>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <footer>
+    &copy; 2025 Gym Elite | All rights reserved
+  </footer>
+  <script>
+    function showSubscriptionForm() {
+      document.getElementById("subscriptionForm").style.display = "block";
+      window.scrollTo({ top: document.getElementById("subscriptionForm").offsetTop - 20, behavior: 'smooth' });
+    }
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        window.scrollTo({ top: el.offsetTop - 20, behavior: 'smooth' });
+      }
+    }
+    function submitForm(event) {
+      event.preventDefault();
+      alert("welcome to world of gymawya");
+    }
+  </script>
+</body>
+</html>
